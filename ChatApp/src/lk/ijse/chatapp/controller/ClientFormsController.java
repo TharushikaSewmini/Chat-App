@@ -7,17 +7,15 @@ import javafx.scene.control.TextField;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.ServerSocket;
 import java.net.Socket;
 
-public class ServerFormController {
+public class ClientFormsController {
 
     public TextArea txtTextArea;
     public TextField txtMessage;
 
     int PORT = 5000;
-    ServerSocket serverSocket;
-    Socket accept;
+    Socket socket;
     DataInputStream dataInputStream;
     DataOutputStream dataOutputStream;
     String message = "";
@@ -25,17 +23,14 @@ public class ServerFormController {
     public void initialize() {
         new Thread(() -> {
             try {
-                serverSocket = new ServerSocket(PORT);
-                txtTextArea.appendText("Server Started..");
-                accept = serverSocket.accept();
-                txtTextArea.appendText("\nClient Connected..");
+                socket = new Socket("localhost",PORT);
 
-                dataInputStream = new DataInputStream(accept.getInputStream());
-                dataOutputStream = new DataOutputStream(accept.getOutputStream());
+                dataInputStream = new DataInputStream(socket.getInputStream());
+                dataOutputStream = new DataOutputStream(socket.getOutputStream());
 
                 while(!message.equals("exit")) {
                     message = dataInputStream.readUTF();
-                    txtTextArea.appendText("\nClient: " + message);
+                    txtTextArea.appendText("\nServer: " + message);
                 }
 
             } catch (IOException e) {

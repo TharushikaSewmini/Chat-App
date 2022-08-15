@@ -15,8 +15,19 @@ public class ClientLoginFormController {
     public AnchorPane context;
 
     public void loginOnAction(ActionEvent actionEvent) throws IOException {
-        Stage stage = (Stage) context.getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/lk/ijse/chatapp/view/ClientForm.fxml"))));
-        stage.centerOnScreen();
+        if(txtUserName.getText().equalsIgnoreCase("Client1")) {
+            loadUi("ClientForm1");
+        }if(txtUserName.getText().equalsIgnoreCase("Client2")) {
+            loadUi("ClientForm2");
+        }if(txtUserName.getText().equalsIgnoreCase("Client3")) {
+            loadUi("ClientForm3");
+        }
+
+    }
+
+    public void loadUi(String location) throws IOException {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/lk/ijse/chatapp/view/"+location+".fxml"))));
+        stage.show();
     }
 }
