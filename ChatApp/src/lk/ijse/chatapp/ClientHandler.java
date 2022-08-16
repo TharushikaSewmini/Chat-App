@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.ArrayList;
 
-public class ClientHandler {
+public class ClientHandler extends Thread {
     private ArrayList<ClientHandler> clients;
     private Socket accept;
     public DataInputStream dataInputStream;
