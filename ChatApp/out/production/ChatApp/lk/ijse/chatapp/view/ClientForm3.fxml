@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="777.0" prefWidth="1045.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chatapp.controller.ClientFormsController">
+   <children>
+      <Label layoutX="431.0" layoutY="68.0" text="Chat Room">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="466.0" layoutY="114.0" text="Client 3">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="txtTextArea" layoutX="224.0" layoutY="224.0" prefHeight="377.0" prefWidth="698.0" />
+      <TextField fx:id="txtMessage" layoutX="224.0" layoutY="664.0" prefHeight="46.0" prefWidth="555.0" />
+      <JFXButton layoutX="823.0" layoutY="666.0" onAction="#sendOnAction" prefHeight="42.0" prefWidth="107.0" style="-fx-background-color: #3498db;" text="Send" textFill="WHITE">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,48 @@
+package lk.ijse.chatapp;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+import java.util.ArrayList;
+
+public class ClientHandler {
+    private ArrayList<ClientHandler> clients;
+    private Socket accept;
+    public DataInputStream dataInputStream;
+    public DataOutputStream dataOutputStream;
+
+    public ClientHandler(Socket socket, ArrayList<ClientHandler> clients) throws IOException {
+        this.accept = socket;
+        this.clients=clients;
+        this.dataInputStream = new DataInputStream(socket.getInputStream());
+        this.dataOutputStream = new DataOutputStream(socket.getOutputStream());
+
+    }
+
+    public void run() {
+        try {
+            String message = "";
+            while (!message.equals("Exit")) {
+                message = dataInputStream.readUTF();
+
+                for (ClientHandler cl : clients) {
+                    cl.dataOutputStream.writeUTF(message);
+                    System.out.println(message);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                dataInputStream.close();
+                dataOutputStream.close();
+                accept.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+}
