@@ -23,7 +23,7 @@ public class ClientHandler extends Thread {
     public void run() {
         try {
             String message = "";
-            while (!message.equals("Exit")) {
+            while (!message.equals("exit")) {
                 message = dataInputStream.readUTF();
 
                 for (ClientHandler cl : clients) {

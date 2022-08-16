@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="841.0" prefWidth="944.0" style="-fx-background-color: #176C7F;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chatapp.Client.controller.ClientFormsController">
+   <children>
+      <JFXButton buttonType="RAISED" layoutX="795.0" layoutY="737.0" onAction="#sendOnAction" prefHeight="65.0" prefWidth="65.0" style="-fx-background-color: #86C7C9; -fx-background-radius: 50;" text="Button" textFill="#86c7c9">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXButton>
+      <TextArea fx:id="txtTextArea" layoutX="79.0" layoutY="91.0" prefHeight="621.0" prefWidth="786.0" style="-fx-border-color: #8A9293; -fx-border-width: 2;">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </TextArea>
+      <TextField fx:id="txtMessage" layoutX="80.0" layoutY="738.0" prefHeight="58.0" prefWidth="686.0" style="-fx-background-radius: 10; -fx-border-color: #8A9293; -fx-border-radius: 10; -fx-border-width: 2;">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </TextField>
+      <Label layoutX="119.0" layoutY="39.0" text="Nimal" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="32.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="44.0" fitWidth="41.0" layoutX="807.0" layoutY="748.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgSend" accessibleRole="BUTTON" fitHeight="47.0" fitWidth="45.0" layoutX="809.0" layoutY="745.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../asserts/sent.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="72.0" layoutX="47.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../asserts/testaccount.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgSendImage" fitHeight="37.0" fitWidth="45.0" layoutX="712.0" layoutY="750.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../asserts/camera.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

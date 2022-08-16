@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1096.0" style="-fx-background-color: #305879;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chatapp.Server.controller.ServerFormController">
+   <children>
+      <Label layoutX="497.0" layoutY="30.0" text="Server" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="txtTextArea" layoutX="90.0" layoutY="126.0" prefHeight="524.0" prefWidth="929.0" style="-fx-background-color: #8A9293; -fx-border-width: 4;">
+         <font>
+            <Font size="21.0" />
+         </font></TextArea>
+   </children>
+</AnchorPane>
