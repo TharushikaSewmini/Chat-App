@@ -30,7 +30,7 @@ public class ClientFormsController {
 
                 while(!message.equals("exit")) {
                     message = dataInputStream.readUTF();
-                    txtTextArea.appendText("\nServer: " + message);
+                    txtTextArea.appendText("\nClient1: " + message);
                 }
 
             } catch (IOException e) {

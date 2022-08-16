@@ -26,8 +26,8 @@ public class ClientLoginFormController {
     }
 
     public void loadUi(String location) throws IOException {
-        Stage stage = new Stage();
+        Stage stage = (Stage) context.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/lk/ijse/chatapp/view/"+location+".fxml"))));
-        stage.show();
+        stage.centerOnScreen();
     }
 }
