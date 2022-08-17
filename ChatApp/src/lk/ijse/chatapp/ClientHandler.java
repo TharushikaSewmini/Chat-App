@@ -22,15 +22,21 @@ public class ClientHandler extends Thread {
 
     public void run() {
         try {
-            String message = "";
-            while (!message.equals("exit")) {
-                message = dataInputStream.readUTF();
+            String message;
+            while (!(message = dataInputStream.readUTF()).equalsIgnoreCase("")) {
+                if (message.equalsIgnoreCase("Exit")){
+                    break;
+                }
 
                 for (ClientHandler cl : clients) {
                     cl.dataOutputStream.writeUTF(message);
                     System.out.println(message);
                 }
             }
+            dataOutputStream.writeUTF("Client Exit");
+            accept.close();
+            dataOutputStream.close();
+            dataInputStream.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

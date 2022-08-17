@@ -3,25 +3,36 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="context" prefHeight="552.0" prefWidth="751.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chatapp.Client.controller.ClientLoginFormController">
+<AnchorPane fx:id="context" prefHeight="683.0" prefWidth="751.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chatapp.Client.controller.ClientLoginFormController">
    <children>
-      <Label layoutX="320.0" layoutY="39.0" text="Login">
-         <font>
-            <Font name="System Bold" size="42.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtUserName" layoutX="247.0" layoutY="298.0" prefHeight="45.0" prefWidth="287.0" promptText="User Name">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </TextField>
-      <JFXButton buttonType="RAISED" layoutX="261.0" layoutY="380.0" onAction="#loginOnAction" prefHeight="48.0" prefWidth="260.0" style="-fx-background-color: #8e44ad; -fx-background-radius: 23;" text="Log In" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="22.0" />
-         </font>
-      </JFXButton>
+      <AnchorPane layoutX="52.0" layoutY="39.0" prefHeight="605.0" prefWidth="648.0" style="-fx-background-color: ACD7D0; -fx-border-color: #5B9AAF; -fx-border-width: 3;">
+         <children>
+            <Label layoutX="251.0" layoutY="22.0" text="Login" textFill="#252985">
+               <font>
+                  <Font name="Arial Bold" size="54.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="298.0" fitWidth="353.0" layoutX="148.0" layoutY="105.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../asserts/PngItem_3933178.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtUserName" alignment="CENTER" layoutX="145.0" layoutY="424.0" prefHeight="55.0" prefWidth="359.0" promptText="User Name" style="-fx-background-color: white;">
+               <font>
+                  <Font name="Arial Bold" size="22.0" />
+               </font>
+            </TextField>
+            <JFXButton buttonType="RAISED" layoutX="213.0" layoutY="507.0" onAction="#loginOnAction" prefHeight="48.0" prefWidth="223.0" style="-fx-background-color: #823F9E; -fx-background-radius: 23;" text="Log In" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

@@ -1,8 +1,6 @@
 package lk.ijse.chatapp.Server.controller;
 
-import javafx.event.ActionEvent;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import lk.ijse.chatapp.ClientHandler;
 
 import java.io.DataInputStream;
@@ -15,7 +13,6 @@ import java.util.ArrayList;
 public class ServerFormController {
 
     public TextArea txtTextArea;
-    public TextField txtMessage;
 
     int PORT = 6000;
     ServerSocket serverSocket;
@@ -49,10 +46,5 @@ public class ServerFormController {
             }
 
         }).start();
-    }
-
-    public void sendOnAction(ActionEvent actionEvent) throws IOException {
-        dataOutputStream.writeUTF(txtMessage.getText().trim());
-        dataOutputStream.flush();
     }
 }
